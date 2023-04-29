@@ -25,7 +25,7 @@ function Layout() {
           component="nav"
         >
           <Link to="/">Inputs</Link>
-          <Link to="/form-builder">Form builder</Link>
+          {/* <Link to="/form-builder">Form builder</Link> */}
         </Stack>
 
         <Outlet />
