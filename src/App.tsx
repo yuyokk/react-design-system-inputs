@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Container, Stack } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import { InputZip } from "./components/InputZip/InputZip";
 import { InputPhone } from "./components/InputPhone/InputPhone";
 import { InputDollar } from "./components/InputDollar/InputDollar";
@@ -19,74 +19,185 @@ export default function App() {
 
   return (
     <Container sx={{ maxWidth: "500px", py: 5 }}>
-      <Stack spacing={3}>
-        <InputPhone
-          label="Phone"
-          size="small"
-          value={phone}
-          onValueChange={({ value }) => updatePhone(value)}
-        />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "flex-start",
+          gap: 5,
+        }}
+      >
+        <Stack spacing={3} sx={{ flex: 1 }}>
+          <InputPhone
+            label="Phone"
+            size="small"
+            helperText={
+              <Stack spacing={1}>
+                <Typography>&lt;InputPhone /&gt;</Typography>
 
-        <InputZip
-          label="Zip"
-          size="small"
-          value={zip}
-          onValueChange={({ value }) => updateZip(value)}
-        />
+                <Typography>Default options:</Typography>
 
-        <InputDollar
-          label="Amount"
-          size="small"
-          value={typeof amount === "undefined" ? "" : amount}
-          onValueChange={({ floatValue }) => updateAmount(floatValue)}
-        />
+                <ul>
+                  <li>format="(###) #### ###"</li>
+                  <li>allowEmptyFormatting=true</li>
+                  <li>mask="_"</li>
+                </ul>
+              </Stack>
+            }
+            value={phone}
+            onValueChange={({ value }) => updatePhone(value)}
+          />
 
-        <InputPercentage
-          label="Percentage"
-          size="small"
-          value={typeof amount === "undefined" ? "" : ownership}
-          onValueChange={({ floatValue }) => updateOwnership(floatValue)}
-        />
+          <InputZip
+            label="Zip"
+            size="small"
+            helperText={
+              <Stack spacing={1}>
+                <Typography>&lt;InputZip /&gt;</Typography>
 
-        <InputSsn
-          label="SSN"
-          size="small"
-          value={ssn}
-          onValueChange={({ value }) => updateSsn(value)}
-        />
+                <Typography>Default options:</Typography>
 
-        <InputTin
-          label="TIN"
-          size="small"
-          value={tin}
-          onValueChange={({ value }) => updateTin(value)}
-        />
+                <ul>
+                  <li>format="#####"</li>
+                  <li>allowEmptyFormatting=true</li>
+                  <li>mask="_"</li>
+                </ul>
+              </Stack>
+            }
+            value={zip}
+            onValueChange={({ value }) => updateZip(value)}
+          />
 
-        <InputNumber
-          label="Number of employees"
-          size="small"
-          value={typeof employeesNo === "undefined" ? "" : ownership}
-          onValueChange={({ floatValue }) => updateEmployeesNo(floatValue)}
-        />
-      </Stack>
+          <InputDollar
+            label="Amount"
+            size="small"
+            helperText={
+              <Stack spacing={1}>
+                <Typography>&lt;InputDollar /&gt;</Typography>
 
-      <Box component="pre">
-        {JSON.stringify(
-          {
-            phone,
-            zip,
-            amount: amount || "n/a",
-            typeofAmount: typeof amount,
-            ownership: ownership || "n/a",
-            typeofOwnership: typeof ownership,
-            ssn,
-            tin,
-            employeesNo: employeesNo || "n/a",
-            typeofEmployeesNo: typeof employeesNo,
-          },
-          null,
-          2
-        )}
+                <Typography>Default options:</Typography>
+
+                <ul>
+                  <li>thousandSeparator=","</li>
+                  <li>MAX_VALUE=500,000,000</li>
+                  <li>decimalScale=2</li>
+                  <li>allowNegative=false</li>
+                </ul>
+              </Stack>
+            }
+            value={typeof amount === "undefined" ? "" : amount}
+            onValueChange={({ floatValue }) => updateAmount(floatValue)}
+          />
+
+          <InputPercentage
+            label="Ownership"
+            size="small"
+            helperText={
+              <Stack spacing={1}>
+                <Typography>&lt;InputPercentage /&gt;</Typography>
+
+                <Typography>Default options:</Typography>
+
+                <ul>
+                  <li>maxValue=100</li>
+                  <li>decimalScale=2</li>
+                  <li>allowNegative=false</li>
+                </ul>
+              </Stack>
+            }
+            value={typeof amount === "undefined" ? "" : ownership}
+            onValueChange={({ floatValue }) => updateOwnership(floatValue)}
+          />
+
+          <InputSsn
+            label="SSN"
+            size="small"
+            helperText={
+              <Stack spacing={1}>
+                <Typography>&lt;InputSsn /&gt;</Typography>
+
+                <Typography>Default options:</Typography>
+
+                <ul>
+                  <li>format="###-##-####"</li>
+                  <li>allowEmptyFormatting=true</li>
+                  <li>mask="_"</li>
+                </ul>
+              </Stack>
+            }
+            value={ssn}
+            onValueChange={({ value }) => updateSsn(value)}
+          />
+
+          <InputTin
+            label="TIN"
+            size="small"
+            helperText={
+              <Stack spacing={1}>
+                <Typography>&lt;InputTin /&gt;</Typography>
+
+                <Typography>Default options:</Typography>
+
+                <ul>
+                  <li>format="##-#######"</li>
+                  <li>allowEmptyFormatting=true</li>
+                  <li>mask="_"</li>
+                </ul>
+              </Stack>
+            }
+            value={tin}
+            onValueChange={({ value }) => updateTin(value)}
+          />
+
+          <InputNumber
+            label="Number of employees"
+            size="small"
+            helperText={
+              <Stack spacing={1}>
+                <Typography>&lt;InputNumber /&gt;</Typography>
+
+                <Typography>Default options:</Typography>
+
+                <ul>
+                  <li>thousandSeparator=false</li>
+                  <li>maxValue=10,000,000</li>
+                  <li>decimalScale=0</li>
+                  <li>allowNegative=false</li>
+                </ul>
+              </Stack>
+            }
+            value={typeof employeesNo === "undefined" ? "" : ownership}
+            onValueChange={({ floatValue }) => updateEmployeesNo(floatValue)}
+          />
+        </Stack>
+
+        <Box
+          className="sticky-values"
+          sx={{
+            position: "sticky",
+            top: "40px",
+            mt: 0,
+            fontSize: 16,
+          }}
+          component="pre"
+        >
+          {JSON.stringify(
+            {
+              phone: phone || "undefined",
+              zip: zip || "undefined",
+              amount: amount || "undefined",
+              typeofAmount: typeof amount,
+              ownership: ownership || "undefined",
+              typeofOwnership: typeof ownership,
+              ssn,
+              tin,
+              employeesNo: employeesNo || "undefined",
+              typeofEmployeesNo: typeof employeesNo,
+            },
+            null,
+            2
+          )}
+        </Box>
       </Box>
     </Container>
   );
