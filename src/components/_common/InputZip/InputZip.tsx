@@ -6,5 +6,11 @@ import {
 type InputZipProps = Omit<InputPatternFormatProps, "format">;
 
 export function InputZip(props: InputZipProps) {
-  return <InputPatternFormat format="#####" {...props} />;
+  return (
+    <InputPatternFormat
+      format="#####"
+      inputProps={{ inputMode: "numeric" }}
+      {...props}
+    />
+  );
 }
