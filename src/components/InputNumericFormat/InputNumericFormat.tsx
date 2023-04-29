@@ -23,12 +23,12 @@ export function InputNumericFormat(props: InputNumericFormatProps) {
   );
 }
 
+// Lets block the user from entering a value greater than `max`
 /* eslint-disable-next-line react-refresh/only-export-components */
 export function validateValue(
   values: NumberFormatValues,
   { max }: { max: number | undefined }
 ) {
-  // Lets block the user from entering a value greater than `max`
   const { floatValue } = values;
 
   if (typeof floatValue === "undefined" || typeof max === "undefined") {
