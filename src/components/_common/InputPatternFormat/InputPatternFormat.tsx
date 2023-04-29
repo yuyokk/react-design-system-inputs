@@ -19,6 +19,7 @@ export function InputPatternFormat(props: InputPatternFormatProps) {
       valueIsNumericString={valueIsNumericString}
       allowEmptyFormatting={allowEmptyFormatting}
       mask={mask}
+      inputProps={{ inputMode: "numeric" }}
       customInput={TextField}
       {...otherProps}
     />

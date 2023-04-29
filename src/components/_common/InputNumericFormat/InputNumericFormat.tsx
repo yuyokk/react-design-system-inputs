@@ -18,7 +18,7 @@ export function InputNumericFormat(props: InputNumericFormatProps) {
       allowNegative={allowNegative}
       decimalScale={decimalScale}
       customInput={TextField}
-      inputProps={{ inputMode: "decimal" }}
+      inputProps={{ inputMode: decimalScale ? "decimal" : "numeric" }}
       {...otherProps}
     />
   );
