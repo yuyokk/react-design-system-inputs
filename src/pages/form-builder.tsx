@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import {
   FormActions,
   FormBuilder,
@@ -76,9 +75,5 @@ const actions: FormActions = [
 ];
 
 export function FormBuilderPage() {
-  return (
-    <Box>
-      <FormBuilder fields={fields} actions={actions} />
-    </Box>
-  );
+  return <FormBuilder fields={fields} actions={actions} />;
 }

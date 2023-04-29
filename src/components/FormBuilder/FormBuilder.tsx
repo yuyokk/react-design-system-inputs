@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { FormField, FormFieldProps } from "./FormField/FormField";
 import { FormAction, FormActionProps } from "./FormAction/FormAction";
 
@@ -28,13 +28,19 @@ export function FormBuilder({ className, fields, actions }: FormBuilderProps) {
       component="form"
       onSubmit={handleSubmit}
     >
-      {fields.map((field) => (
-        <FormField {...field} key={field.id} />
-      ))}
+      <Stack spacing={4}>
+        <Stack spacing={3}>
+          {fields.map((field) => (
+            <FormField {...field} key={field.id} />
+          ))}
+        </Stack>
 
-      {actions.map((action) => (
-        <FormAction {...action} key={action.id} />
-      ))}
+        <Stack direction="row">
+          {actions.map((action) => (
+            <FormAction {...action} key={action.id} />
+          ))}
+        </Stack>
+      </Stack>
     </Box>
   );
 }
