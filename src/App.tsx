@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Stack } from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
 import { InputZip } from "./components/InputZip/InputZip";
 import { InputPhone } from "./components/InputPhone/InputPhone";
 import { InputDollar } from "./components/InputDollar/InputDollar";
@@ -7,10 +7,6 @@ import { InputPercentage } from "./components/InputPercentage/InputPercentage";
 import { InputSsn } from "./components/InputSsn/InputSsn";
 import { InputTin } from "./components/InputTin/InputTin";
 import { InputNumber } from "./components/InputNumber/InputNumber";
-
-//
-// npm install @mui/material @emotion/react @emotion/styled react-number-format
-//
 
 export default function App() {
   const [phone, updatePhone] = useState("");
@@ -22,8 +18,8 @@ export default function App() {
   const [employeesNo, updateEmployeesNo] = useState<number | undefined>();
 
   return (
-    <Box sx={{ py: 3 }}>
-      <Stack spacing={3} sx={{ maxWidth: "400px", mx: "auto" }}>
+    <Container sx={{ maxWidth: "500px", py: 5 }}>
+      <Stack spacing={3}>
         <InputPhone
           label="Phone"
           size="small"
@@ -74,26 +70,24 @@ export default function App() {
         />
       </Stack>
 
-      <Box>
-        <pre>
-          {JSON.stringify(
-            {
-              phone,
-              zip,
-              amount: amount || "n/a",
-              typeofAmount: typeof amount,
-              ownership: ownership || "n/a",
-              typeofOwnership: typeof ownership,
-              ssn,
-              tin,
-              employeesNo: employeesNo || "n/a",
-              typeofEmployeesNo: typeof employeesNo,
-            },
-            null,
-            2
-          )}
-        </pre>
+      <Box component="pre">
+        {JSON.stringify(
+          {
+            phone,
+            zip,
+            amount: amount || "n/a",
+            typeofAmount: typeof amount,
+            ownership: ownership || "n/a",
+            typeofOwnership: typeof ownership,
+            ssn,
+            tin,
+            employeesNo: employeesNo || "n/a",
+            typeofEmployeesNo: typeof employeesNo,
+          },
+          null,
+          2
+        )}
       </Box>
-    </Box>
+    </Container>
   );
 }

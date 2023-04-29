@@ -4,13 +4,15 @@ import {
   validateValue,
 } from "../InputNumericFormat/InputNumericFormat";
 
+const MAX_VALUE = 10_000_000;
+
 type InputNumberProps = InputNumericFormatProps & {
   maxValue?: number;
 };
 
 export function InputNumber(props: InputNumberProps) {
   const {
-    maxValue,
+    maxValue = MAX_VALUE,
     thousandSeparator = false,
     decimalScale = 0,
     ...otherProps

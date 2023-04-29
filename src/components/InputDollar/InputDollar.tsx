@@ -5,12 +5,14 @@ import {
   validateValue,
 } from "../InputNumericFormat/InputNumericFormat";
 
+const MAX_VALUE = 500_000_000;
+
 type InputDollarProps = InputNumericFormatProps & {
   maxValue?: number;
 };
 
 export function InputDollar(props: InputDollarProps) {
-  const { maxValue, ...otherProps } = props;
+  const { maxValue = MAX_VALUE, ...otherProps } = props;
 
   return (
     <InputNumericFormat

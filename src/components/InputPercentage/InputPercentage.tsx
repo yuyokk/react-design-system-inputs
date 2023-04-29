@@ -5,12 +5,14 @@ import {
   validateValue,
 } from "../InputNumericFormat/InputNumericFormat";
 
+const MAX_VALUE = 100;
+
 type InputPercentageProps = InputNumericFormatProps & {
   maxValue?: number;
 };
 
 export function InputPercentage(props: InputPercentageProps) {
-  const { maxValue = 100, ...otherProps } = props;
+  const { maxValue = MAX_VALUE, ...otherProps } = props;
 
   return (
     <InputNumericFormat
