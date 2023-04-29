@@ -29,7 +29,7 @@ export function HomePage() {
       <Stack spacing={3} sx={{ flex: 1 }}>
         <InputPhone
           label="Phone"
-          size="small"
+
           helperText={
             <Stack spacing={1}>
               <Typography>&lt;InputPhone /&gt;</Typography>
@@ -49,7 +49,7 @@ export function HomePage() {
 
         <InputZip
           label="Zip"
-          size="small"
+
           helperText={
             <Stack spacing={1}>
               <Typography>&lt;InputZip /&gt;</Typography>
@@ -69,7 +69,7 @@ export function HomePage() {
 
         <InputDollar
           label="Amount"
-          size="small"
+
           helperText={
             <Stack spacing={1}>
               <Typography>&lt;InputDollar /&gt;</Typography>
@@ -90,7 +90,7 @@ export function HomePage() {
 
         <InputPercentage
           label="Ownership"
-          size="small"
+
           helperText={
             <Stack spacing={1}>
               <Typography>&lt;InputPercentage /&gt;</Typography>
@@ -110,7 +110,7 @@ export function HomePage() {
 
         <InputSsn
           label="SSN"
-          size="small"
+
           helperText={
             <Stack spacing={1}>
               <Typography>&lt;InputSsn /&gt;</Typography>
@@ -130,7 +130,7 @@ export function HomePage() {
 
         <InputTin
           label="TIN"
-          size="small"
+
           helperText={
             <Stack spacing={1}>
               <Typography>&lt;InputTin /&gt;</Typography>
@@ -150,7 +150,7 @@ export function HomePage() {
 
         <InputNumber
           label="Number of employees"
-          size="small"
+
           helperText={
             <Stack spacing={1}>
               <Typography>&lt;InputNumber /&gt;</Typography>

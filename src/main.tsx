@@ -11,6 +11,20 @@ const theme = createTheme({
         spacing: 2,
       },
     },
+    MuiTextField: {
+      defaultProps: {
+        size: "small",
+        fullWidth: true,
+      },
+    },
+    MuiButton: {
+      defaultProps: {
+        size: "small",
+        variant: "contained",
+        disableElevation: true,
+        disableRipple: true,
+      },
+    },
   },
 });
 

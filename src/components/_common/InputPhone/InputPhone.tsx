@@ -25,6 +25,7 @@ export function InputPhone(props: InputPhoneProps) {
   return (
     <InputPatternFormat
       format="(###) #### ###"
+      inputProps={{ inputMode: "tel" }}
       isAllowed={handleIsAllowed}
       {...props}
     />
