@@ -6,11 +6,5 @@ import {
 type InputTinProps = Omit<InputPatternFormatProps, "format">;
 
 export function InputTin(props: InputTinProps) {
-  return (
-    <InputPatternFormat
-      format="##-#######"
-      inputProps={{ inputMode: "numeric" }}
-      {...props}
-    />
-  );
+  return <InputPatternFormat format="##-#######" {...props} />;
 }
