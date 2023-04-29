@@ -1,14 +1,14 @@
 import { Link, Outlet, Route, Routes } from "react-router-dom";
 import { Container, Stack } from "@mui/material";
 import { HomePage } from "./pages/home";
-import { FormBuilderPage } from "./pages/form-builder";
+// import { FormBuilderPage } from "./pages/form-builder";
 
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path="form-builder" element={<FormBuilderPage />} />
+        {/* <Route path="form-builder" element={<FormBuilderPage />} /> */}
       </Route>
     </Routes>
   );
